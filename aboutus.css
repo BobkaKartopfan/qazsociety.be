@@ -1,11 +1,6 @@
-/* ABOUT US PAGE — Styled to match new_style.css */
-
-/* ===============================
-   BASE VARIABLES & RESET
-=============================== */
 :root {
-  --primary-color: #0066cc; /* Air Astana blue */
-  --secondary-color: #ffcc00; /* Air Astana yellow */
+  --primary-color: #0066cc;
+  --secondary-color: #ffcc00;
   --dark-blue: #003366;
   --light-blue: #e6f0fa;
   --text-color: #333;
@@ -29,32 +24,27 @@ html {
   font-size: 16px;
 }
 
-/* Background – softer, elegant pattern */
 body {
   font-family: 'Montserrat', sans-serif;
   color: var(--text-color);
   background-color: #ffffff;
   background-image: url('Logo-pattern.svg');
   background-repeat: repeat;
-  background-size: 700px;       /* makes pattern larger and calmer */
+  background-size: 700px;
   background-attachment: fixed;
   background-position: center;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Soft fade overlay to calm pattern brightness */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.7);  /* translucent white veil */
+  background: rgba(255, 255, 255, 0.7);
   z-index: -1;
 }
 
-/* ===============================
-   HEADER / NAVIGATION
-=============================== */
 .main-header {
   position: sticky;
   top: 0;
@@ -79,7 +69,6 @@ body::before {
   transition: var(--transition);
 }
 
-/* Navigation */
 .main-header {
   position: sticky;
   top: 0;
@@ -109,7 +98,6 @@ body::before {
   transition: var(--transition);
 }
 
-/* Navigation (matches new_index.html style) */
 .main-header {
   position: sticky;
   top: 0;
@@ -143,7 +131,6 @@ body::before {
   display: block;
 }
 
-/* Navigation links */
 .main-nav {
   display: flex;
   align-items: center;
@@ -155,12 +142,12 @@ body::before {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 8px; /* Reduced from 25px to allow more control with margins */
+  gap: 8px;
 }
 
 .nav-item {
   position: relative;
-  margin: 0 8px; /* Added horizontal margin */
+  margin: 0 8px;
 }
 
 .nav-link {
@@ -168,13 +155,13 @@ body::before {
   text-transform: uppercase;
   color: var(--text-color);
   font-size: 0.85rem;
-  letter-spacing: 1px; /* Increased letter spacing */
+  letter-spacing: 1px;
   transition: var(--transition);
   position: relative;
-  padding: 12px 16px; /* Added consistent padding */
-  white-space: nowrap; /* Prevents text wrapping */
-  border-radius: 4px; /* Added for hover effect */
-  text-decoration: none; /* Removes underline */
+  padding: 12px 16px;
+  white-space: nowrap;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 .nav-link:hover {
@@ -182,9 +169,6 @@ body::before {
   background-color: rgba(0, 102, 204, 0.1);
 }
 
-/* ===============================
-   MAIN SECTION LAYOUT
-=============================== */
 .section {
   padding: 6rem 0;
   background-color: var(--white);
@@ -218,9 +202,6 @@ body::before {
   border-radius: 2px;
 }
 
-/* ===============================
-   TEAM HIERARCHY
-=============================== */
 .hierarchy-container {
   display: flex;
   flex-direction: column;
@@ -250,9 +231,6 @@ body::before {
   display: none;
 }
 
-/* ===============================
-   PERSON CARDS
-=============================== */
 .person-card {
   background-color: var(--white);
   border-radius: var(--border-radius);
@@ -298,9 +276,6 @@ body::before {
   line-height: 1.6;
 }
 
-/* ===============================
-   FOOTER
-=============================== */
 .main-footer {
   background-color: var(--white);
   color: var(--text-color);
@@ -379,9 +354,6 @@ body::before {
   color: var(--primary-color);
 }
 
-/* ===============================
-   RESPONSIVE DESIGN
-=============================== */
 @media (max-width: 992px) {
   .section {
     margin: 4rem auto;
