@@ -1475,6 +1475,7 @@ ul {
 
 /* Added temporarily for the event */
 .event-slider {
+  overflow: hidden;
   position: relative;
   width: 100%;
   max-width: 900px;
@@ -1483,23 +1484,23 @@ ul {
   border-radius: 12px;
 }
 
-/* Set a fixed height for the slider */
 .slides-container {
   display: flex;
   transition: transform 0.4s ease;
-  height: 600px; /* CHANGE height if you want taller/shorter */
+  flex-wrap: nowrap;
+  width:100%;
+  height: 600px;
 }
 
-/* Apply object-fit to keep images equal and nicely cropped */
 .slides-container img {
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
-  object-fit: cover;    /* keeps aspect ratio + fills container */
-  object-position: center;  /* crop center part of image */
+  object-fit: cover;    
+  object-position: center;
   flex-shrink: 0;
 }
 
-/* Navigation buttons */
 .slide-btn {
   position: absolute;
   top: 50%;
