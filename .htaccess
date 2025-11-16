@@ -7,4 +7,5 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 # Custom URL mapping
 RewriteRule ^team$ aboutus.html [NC,L]
+RewriteRule ^events$ events.html [NC,L]
 RewriteRule ^$ index.html [NC,L]

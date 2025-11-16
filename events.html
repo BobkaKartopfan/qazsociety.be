@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events - Qazaq Society in Belgium</title>
+  <link rel="icon" type="image/svg+xml" href="images/Qazaq-Society-Sign-Yellow.svg">
+  <link rel="apple-touch-icon" href="images/Qazaq-Society-Sign-Yellow.svg">
+  <link rel="shortcut icon" href="images/Qazaq-Society-Sign-Yellow.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="new_style.css">
+
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="images/Qazaq-Society-Logo-Yellow-Blue.svg" alt="Qazaq Society In Belgium" class="logo">
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html#about" class="nav-link">Who We Are</a></li>
+            <li class="nav-item"><a href="index.html#services" class="nav-link">What Do We Provide</a></li>
+            <li class="nav-item"><a href="events.html" class="nav-link active">Events</a></li>
+            <li class="nav-item"><a href="index.html#community" class="nav-link">Community</a></li>
+            <li class="nav-item"><a href="aboutus.html" class="nav-link">Our Team</a></li>
+            <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Events Section -->
+  <main class="section bg-white">
+    <div class="container">
+      <h1 class="section-title">Recent Events</h1>
+      <div class="events-container">
+        <div class="event-card">
+            <div class="event-date"><i class="far fa-calendar-alt"></i> November 25, 2025 | 15:00 - 17:30</div>
+            <h3 class="event-title">Qazaq Society Teams Up with the Embassy of Kazakhstan in Belgium for a Friendly Football Match with FUTI Ahead of the Kazakhstan–Belgium Game</h3>
+            <p class="event-description">Members of the Qazaq Society, together with the Embassy of the Republic of Kazakhstan in Belgium, organized a friendly football match with the FUTI team on the embassy grounds. The event was honored by the presence of His Excellency Roman Vassilenko, Ambassador of Kazakhstan, who delivered an inspiring speech wishing the players success and officially launched the match with a ceremonial first kick.</p>
+            <p class="event-description">Amirlan Nurbalin, President of the Qazaq Society, noted that the initiative was held in anticipation of the upcoming national team match on November 15, where Kazakhstan will face Belgium. “We wanted to show our support, unite our community, and bring the excitement of football closer to our youth and students,” he said.</p>
+            <p class="event-description">FUTI Vice President <b>Sarosh Sultan</b> also expressed his gratitude to the Qazaq Society and the Embassy for the warm collaboration and praised the spirit of friendship demonstrated throughout the event. He highlighted the importance of such initiatives in bringing together diverse communities through sports and fostering long-term partnerships.</p>
+            <p class="event-description">The event fostered cultural connection, strengthened community spirit, and highlighted the Qazaq Society’s active role in promoting Kazakh culture and unity across Europe.</p>
+          <div class="event-content">
+            <div class="event-meta">
+              <div class="event-location">
+                <i class="fas fa-map-marker-alt"></i> Embassy of Kazakhstan, Brussels
+          <div class="event-slider">
+            <button class="slide-btn prev">❮</button>
+            
+            <div class="slides-container">
+              <img src="images/GroupPhoto.JPG" class="wider">
+              <img src="images/futieventmain.JPG" class="wider">
+              <img src="images/WithFutiLeader.JPG" class="wider">
+              <img src="images/RomanVasilienkoOnField.JPG">
+              <img src="images/football1.JPG">
+              <img src="images/football2.JPG">
+              <img src="images/football3.JPG">
+              <img src="images/football4.JPG">
+            </div>
+
+            <button class="slide-btn next">❯</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="events-container">
+      <div class="event-card">
+        <h1 class="section-title">Upcoming Events </h1>
+      </div>
+      <div class="text-center">
+        <a href="#" class="btn btn-primary">View Past Events</a>
+      </div>
+    </div>
+  </main>
+
+<script>
+let index = 0;
+const slides = document.querySelector(".slides-container");
+const images = document.querySelectorAll(".slides-container img");
+
+document.querySelector(".next").onclick = () => {
+  index = (index + 1) % images.length;
+  slides.style.transform = `translateX(${-index * 100}%)`;
+};
+
+document.querySelector(".prev").onclick = () => {
+  index = (index - 1 + images.length) % images.length;
+  slides.style.transform = `translateX(${-index * 100}%)`;
+};
+</script>

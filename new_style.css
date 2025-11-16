@@ -1,3 +1,141 @@
+/* Event Banner */
+.event-banner {
+  position: relative;
+  background: url('../images/GroupPhoto.JPG') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-banner .section-title {
+  color: white;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.event-banner .event-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 600px;
+  margin: 0 auto 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.event-banner .event-date {
+  background: var(--primary-color);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-right: 20px;
+  min-width: 80px;
+}
+
+.event-banner .day {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.event-banner .month {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.event-banner .event-details h3 {
+  color: var(--dark-blue);
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+.event-banner .event-details p {
+  color: var(--dark-gray);
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.event-banner .event-details i {
+  color: var(--primary-color);
+  margin-right: 8px;
+  width: 20px;
+  text-align: center;
+}
+
+.event-banner .btn-outline {
+  border-color: white;
+  color: white;
+  background: transparent;
+}
+
+.event-banner .btn-outline:hover {
+  background: white;
+  color: var(--primary-color);
+}
+
+.event-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .event-banner .event-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .event-banner .event-date {
+    margin: 0 auto 15px;
+    padding: 10px 15px;
+  }
+  
+  .event-banner .day {
+    font-size: 1.8rem;
+  }
+  
+  .event-banner .month {
+    font-size: 0.9rem;
+  }
+  
+  .event-banner .event-details h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Event Image Styles */
+.event-image {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .event-image {
+    max-width: 90%;
+  }
+}
+
 /* Base Styles */
 :root {
   --primary-color: #0066cc;  
@@ -1309,4 +1447,83 @@ ul {
     max-width: 100% !important;
     height: auto !important;
   }
+}
+
+  .event-image {
+      max-width: 60%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .event-title {
+      text-align: center;
+      margin: 20px 0 15px;
+      width: 100%;
+    }
+    
+    @media (max-width: 768px) {
+      .event-image {
+        max-width: 90%;
+      }
+      
+      .event-title {
+        margin: 15px 0 10px;
+      }
+    }
+
+/* Added temporarily for the event */
+.event-slider {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Set a fixed height for the slider */
+.slides-container {
+  display: flex;
+  transition: transform 0.4s ease;
+  height: 600px; /* CHANGE height if you want taller/shorter */
+}
+
+/* Apply object-fit to keep images equal and nicely cropped */
+.slides-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* keeps aspect ratio + fills container */
+  object-position: center;  /* crop center part of image */
+  flex-shrink: 0;
+}
+
+/* Navigation buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 20;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  transition: 0.2s ease;
+}
+
+.slide-btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.slide-btn.prev {
+  left: 12px;
+}
+
+.slide-btn.next {
+  right: 12px;
 }
