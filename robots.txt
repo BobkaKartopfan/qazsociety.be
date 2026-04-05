@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Max-image-preview: large
 
 Sitemap: https://qazsociety.be/sitemap.xml
