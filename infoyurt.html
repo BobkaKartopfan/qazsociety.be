@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yurt Information | Qazaq Society in Belgium</title>
+  <link rel="icon" type="image/svg+xml" href="images/Qazaq-Society-Sign-Yellow.svg">
+  <link rel="apple-touch-icon" href="images/Qazaq-Society-Sign-Yellow.svg">
+  <link rel="shortcut icon" href="images/Qazaq-Society-Sign-Yellow.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="infoyurt.css">
+</head>
+<body>
+  <main class="info-page">
+    <section class="info-card" aria-labelledby="page-title">
+      <div class="media-panel">
+        <img src="images/KazakhYurt.jpg" alt="Traditional Kazakh yurt" class="info-image">
+      </div>
+
+      <div class="content">
+        <p class="eyebrow">Yurt Information</p>
+        <div class="content-header">
+          <h1 id="page-title">Traditional Kazakh Yurt</h1>
+          <label class="language-picker" for="language-select">
+            <span>Language</span>
+            <select id="language-select" aria-label="Select language">
+              <option value="en" selected>English</option>
+              <option value="ru">Russian</option>
+              <option value="kk">Kazakh</option>
+              <option value="fr">French</option>
+              <option value="nl">Dutch</option>
+            </select>
+          </label>
+        </div>
+
+        <article class="translation-item">
+          <h2 id="translation-label">English</h2>
+          <div id="translation-content" class="translation-copy"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        label: "English",
+        paragraphs: [
+          "Welcome!",
+          "Before you is a yurt, the traditional dwelling of the nomadic peoples of Kazakhstan, installed at the Embassy of Kazakhstan in Belgium.",
+          "The yurt was used for centuries in the steppes of Central Asia and was perfectly suited to the nomadic way of life: it is easy to assemble, dismantle, and transport.",
+          "Its structure consists of a wooden frame (kerege, uyk) and a central ring called the shanyrak, which symbolizes home, family, and the continuity of generations.",
+          "On the outside, the yurt is covered with felt made from sheep's wool, which protects against the cold in winter and keeps it cool in summer.",
+          "The yurt is not only a dwelling, but also an important symbol of the culture, traditions, and hospitality of the Kazakh people."
+        ]
+      },
+      ru: {
+        label: "Russian",
+        paragraphs: [
+          "\u0414\u043e\u0431\u0440\u043e \u043f\u043e\u0436\u0430\u043b\u043e\u0432\u0430\u0442\u044c!",
+          "\u041f\u0435\u0440\u0435\u0434 \u0432\u0430\u043c\u0438 \u2014 \u044e\u0440\u0442\u0430, \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u043e\u0435 \u0436\u0438\u043b\u0438\u0449\u0435 \u043a\u043e\u0447\u0435\u0432\u044b\u0445 \u043d\u0430\u0440\u043e\u0434\u043e\u0432 \u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d\u0430, \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u0430\u044f \u0432 \u041f\u043e\u0441\u043e\u043b\u044c\u0441\u0442\u0432e \u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d\u0430 \u0432 \u0411\u0435\u043b\u044c\u0433\u0438\u0438.",
+          "\u042e\u0440\u0442\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0430\u0441\u044c \u043d\u0430 \u043f\u0440\u043e\u0442\u044f\u0436\u0435\u043d\u0438\u0438 \u0432\u0435\u043a\u043e\u0432 \u0432 \u0441\u0442\u0435\u043f\u044f\u0445 \u0426\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u043e\u0439 \u0410\u0437\u0438\u0438 \u0438 \u0438\u0434\u0435\u0430\u043b\u044c\u043d\u043e \u043f\u043e\u0434\u0445\u043e\u0434\u0438\u043b\u0430 \u0434\u043b\u044f \u043a\u043e\u0447\u0435\u0432\u043e\u0433\u043e \u043e\u0431\u0440\u0430\u0437\u0430 \u0436\u0438\u0437\u043d\u0438: \u0435\u0451 \u043b\u0435\u0433\u043a\u043e \u0441\u043e\u0431\u0438\u0440\u0430\u0442\u044c, \u0440\u0430\u0437\u0431\u0438\u0440\u0430\u0442\u044c \u0438 \u043f\u0435\u0440\u0435\u0432\u043e\u0437\u0438\u0442\u044c.",
+          "\u0415\u0451 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f \u0441\u043e\u0441\u0442\u043e\u0438\u0442 \u0438\u0437 \u0434\u0435\u0440\u0435\u0432\u044f\u043d\u043d\u043e\u0433\u043e \u043a\u0430\u0440\u043a\u0430\u0441\u0430 (\u043a\u0435\u0440\u0435\u0433\u0435, \u0443\u044b\u043a) \u0438 \u0446\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043a\u043e\u043b\u044c\u0446\u0430 \u2014 \u0448\u0430\u043d\u044b\u0440\u0430\u043a\u0430, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0441\u0438\u043c\u0432\u043e\u043b\u0438\u0437\u0438\u0440\u0443\u0435\u0442 \u0434\u043e\u043c, \u0441\u0435\u043c\u044c\u044e \u0438 \u043f\u0440\u0435\u0435\u043c\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u044c \u043f\u043e\u043a\u043e\u043b\u0435\u043d\u0438\u0439.",
+          "\u0421\u043d\u0430\u0440\u0443\u0436\u0438 \u044e\u0440\u0442\u0430 \u043f\u043e\u043a\u0440\u044b\u0442\u0430 \u0432\u043e\u0439\u043b\u043e\u043a\u043e\u043c \u0438\u0437 \u043e\u0432\u0435\u0447\u044c\u0435\u0439 \u0448\u0435\u0440\u0441\u0442\u0438, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0437\u0430\u0449\u0438\u0449\u0430\u0435\u0442 \u043e\u0442 \u0445\u043e\u043b\u043e\u0434\u0430 \u0437\u0438\u043c\u043e\u0439 \u0438 \u0441\u043e\u0445\u0440\u0430\u043d\u044f\u0435\u0442 \u043f\u0440\u043e\u0445\u043b\u0430\u0434\u0443 \u043b\u0435\u0442\u043e\u043c.",
+          "\u042e\u0440\u0442\u0430 \u2014 \u044d\u0442\u043e \u043d\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u0436\u0438\u043b\u0438\u0449\u0435, \u043d\u043e \u0438 \u0432\u0430\u0436\u043d\u044b\u0439 \u0441\u0438\u043c\u0432\u043e\u043b \u043a\u0443\u043b\u044c\u0442\u0443\u0440\u044b, \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u0439 \u0438 \u0433\u043e\u0441\u0442\u0435\u043f\u0440\u0438\u0438\u043c\u0441\u0442\u0432\u0430 \u043a\u0430\u0437\u0430\u0445\u0441\u043a\u043e\u0433\u043e \u043d\u0430\u0440\u043e\u0434\u0430."
+        ]
+      },
+      kk: {
+        label: "Kazakh",
+        paragraphs: [
+          "\u049a\u043e\u0448 \u043a\u0435\u043b\u0434\u0456\u04a3\u0456\u0437!",
+          "\u0421\u0456\u0437\u0434\u0456\u04a3 \u0430\u043b\u0434\u044b\u04a3\u044b\u0437\u0434\u0430 \u2014 \u049a\u0430\u0437\u0430\u049b\u0441\u0442\u0430\u043d\u043d\u044b\u04a3 \u043a\u04e9\u0448\u043f\u0435\u043b\u0456 \u0445\u0430\u043b\u044b\u049b\u0442\u0430\u0440\u044b\u043d\u044b\u04a3 \u0434\u04d9\u0441\u0442\u04af\u0440\u043b\u0456 \u0431\u0430\u0441\u043f\u0430\u043d\u0430\u0441\u044b \u0431\u043e\u043b\u044b\u043f \u0442\u0430\u0431\u044b\u043b\u0430\u0442\u044b\u043d \u043a\u0438\u0456\u0437 \u04af\u0439, \u043e\u043b \u0411\u0435\u043b\u044c\u0433\u0438\u044f\u0434\u0430\u0493\u044b \u049a\u0430\u0437\u0430\u049b\u0441\u0442\u0430\u043d \u0415\u043b\u0448\u0456\u043b\u0456\u0433\u0456\u043d\u0434\u0435 \u043e\u0440\u043d\u0430\u0442\u044b\u043b\u0493\u0430\u043d.",
+          "\u041a\u0438\u0456\u0437 \u04af\u0439 \u041e\u0440\u0442\u0430\u043b\u044b\u049b \u0410\u0437\u0438\u044f \u0434\u0430\u043b\u0430\u043b\u0430\u0440\u044b\u043d\u0434\u0430 \u0493\u0430\u0441\u044b\u0440\u043b\u0430\u0440 \u0431\u043e\u0439\u044b \u049b\u043e\u043b\u0434\u0430\u043d\u044b\u043b\u044b\u043f \u043a\u0435\u043b\u0434\u0456 \u0436\u04d9\u043d\u0435 \u043a\u04e9\u0448\u043f\u0435\u043b\u0456 \u04e9\u043c\u0456\u0440 \u0441\u0430\u043b\u0442\u044b\u043d\u0430 \u04e9\u0442\u0435 \u044b\u04a3\u0493\u0430\u0439\u043b\u044b \u0431\u043e\u043b\u0434\u044b: \u043e\u043d\u044b \u0436\u0438\u043d\u0430\u0443, \u0448\u0435\u0448\u0443 \u0436\u04d9\u043d\u0435 \u0442\u0430\u0441\u044b\u043c\u0430\u043b\u0434\u0430\u0443 \u043e\u04a3\u0430\u0439.",
+          "\u041e\u043d\u044b\u04a3 \u049b\u04b1\u0440\u044b\u043b\u044b\u043c\u044b \u0430\u0493\u0430\u0448 \u049b\u0430\u04a3\u049b\u0430\u0434\u0430\u043d (\u043a\u0435\u0440\u0435\u0433\u0435, \u0443\u044b\u049b) \u0436\u04d9\u043d\u0435 \u0448\u0430\u04a3\u044b\u0440\u0430\u049b \u0434\u0435\u043f \u0430\u0442\u0430\u043b\u0430\u0442\u044b\u043d \u043e\u0440\u0442\u0430\u043b\u044b\u049b \u0448\u0435\u04a3\u0431\u0435\u0440\u0434\u0435\u043d \u0442\u04b1\u0440\u0430\u0434\u044b, \u043e\u043b \u04af\u0439\u0434\u0456, \u043e\u0442\u0431\u0430\u0441\u044b\u043d\u044b \u0436\u04d9\u043d\u0435 \u04b1\u0440\u043f\u0430\u049b\u0442\u0430\u0440 \u0441\u0430\u0431\u0430\u0493\u0430\u0441\u0442\u044b\u0493\u044b\u043d \u0431\u0435\u0439\u043d\u0435\u043b\u0435\u0439\u0434\u0456.",
+          "\u0421\u044b\u0440\u0442\u044b\u043d\u0430\u043d \u043a\u0438\u0456\u0437 \u04af\u0439 \u049b\u043e\u0439 \u0436\u04af\u043d\u0456\u043d\u0435\u043d \u0436\u0430\u0441\u0430\u043b\u0493\u0430\u043d \u043a\u0438\u0456\u0437\u0431\u0435\u043d \u0436\u0430\u0431\u044b\u043b\u0430\u0434\u044b, \u043e\u043b \u049b\u044b\u0441\u0442\u0430 \u0441\u0443\u044b\u049b\u0442\u0430\u043d \u049b\u043e\u0440\u0493\u0430\u0439\u0434\u044b \u0436\u04d9\u043d\u0435 \u0436\u0430\u0437\u0434\u0430 \u0441\u0430\u043b\u049b\u044b\u043d\u0434\u044b\u049b\u0442\u044b \u0441\u0430\u049b\u0442\u0430\u0439\u0434\u044b.",
+          "\u041a\u0438\u0456\u0437 \u04af\u0439 \u0442\u0435\u043a \u049b\u0430\u043d\u0430 \u0431\u0430\u0441\u043f\u0430\u043d\u0430 \u0435\u043c\u0435\u0441, \u043e\u043b \u0441\u043e\u043d\u044b\u043c\u0435\u043d \u049b\u0430\u0442\u0430\u0440 \u049b\u0430\u0437\u0430\u049b \u0445\u0430\u043b\u049b\u044b\u043d\u044b\u04a3 \u043c\u04d9\u0434\u0435\u043d\u0438\u0435\u0442\u0456\u043d\u0456\u04a3, \u0434\u04d9\u0441\u0442\u04af\u0440\u043b\u0435\u0440\u0456\u043d\u0456\u04a3 \u0436\u04d9\u043d\u0435 \u049b\u043e\u043d\u0430\u049b\u0436\u0430\u0439\u043b\u044b\u0493\u044b\u043d\u044b\u04a3 \u043c\u0430\u04a3\u044b\u0437\u0434\u044b \u043d\u044b\u0448\u0430\u043d\u044b."
+        ]
+      },
+      fr: {
+        label: "French",
+        paragraphs: [
+          "Bienvenue !",
+          "Devant vous se trouve une yourte, l'habitation traditionnelle des peuples nomades du Kazakhstan, install\u00e9e \u00e0 l'Ambassade du Kazakhstan en Belgique.",
+          "La yourte a \u00e9t\u00e9 utilis\u00e9e pendant des si\u00e8cles dans les steppes d'Asie centrale et convenait parfaitement au mode de vie nomade : elle est facile \u00e0 monter, \u00e0 d\u00e9monter et \u00e0 transporter.",
+          "Sa structure se compose d'une armature en bois (kerege, uyk) et d'un anneau central appel\u00e9 shanyrak, qui symbolise la maison, la famille et la continuit\u00e9 entre les g\u00e9n\u00e9rations.",
+          "\u00c0 l'ext\u00e9rieur, la yourte est recouverte de feutre en laine de mouton, qui prot\u00e8ge du froid en hiver et conserve la fra\u00eecheur en \u00e9t\u00e9.",
+          "La yourte n'est pas seulement une habitation, c'est aussi un symbole important de la culture, des traditions et de l'hospitalit\u00e9 du peuple kazakh."
+        ]
+      },
+      nl: {
+        label: "Dutch",
+        paragraphs: [
+          "Welkom!",
+          "Voor u staat een joert, de traditionele woning van de nomadische volkeren van Kazachstan, opgesteld in de Ambassade van Kazachstan in Belgi\u00eb.",
+          "De joert werd eeuwenlang gebruikt in de steppen van Centraal-Azi\u00eb en was perfect geschikt voor de nomadische levenswijze: ze is gemakkelijk op te bouwen, af te breken en te vervoeren.",
+          "De constructie bestaat uit een houten frame (kerege, uyk) en een centrale ring, de shanyrak, die symbool staat voor huis, familie en de continu\u00efteit van generaties.",
+          "Aan de buitenkant is de joert bedekt met vilt van schapenwol, dat beschermt tegen de kou in de winter en de koelte bewaart in de zomer.",
+          "De joert is niet alleen een woning, maar ook een belangrijk symbool van de cultuur, tradities en gastvrijheid van het Kazachse volk."
+        ]
+      }
+    };
+
+    const select = document.getElementById("language-select");
+    const label = document.getElementById("translation-label");
+    const content = document.getElementById("translation-content");
+
+    function renderTranslation(language) {
+      const entry = translations[language] || translations.en;
+      label.textContent = entry.label;
+      content.innerHTML = "";
+
+      entry.paragraphs.forEach((paragraph) => {
+        const p = document.createElement("p");
+        p.textContent = paragraph;
+        content.appendChild(p);
+      });
+
+      document.documentElement.lang = language;
+    }
+
+    select.addEventListener("change", (event) => {
+      renderTranslation(event.target.value);
+    });
+
+    renderTranslation("en");
+  </script>
+</body>
+</html>
