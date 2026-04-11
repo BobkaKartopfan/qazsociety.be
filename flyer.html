@@ -55,12 +55,11 @@
       font: inherit;
     }
 
-    .pdf-viewer {
+    .flyer-view {
       display: block;
-      width: 100%;
-      height: calc(100vh - 72px);
-      min-height: 720px;
-      border: 0;
+      width: min(100%, 1684px);
+      height: auto;
+      margin: 0 auto;
       background: #fff;
     }
 
@@ -79,8 +78,8 @@
         width: 100%;
       }
 
-      .pdf-viewer {
-        height: calc(100vh - 136px);
+      .flyer-view {
+        width: 100%;
       }
     }
   </style>
@@ -98,39 +97,41 @@
     </label>
   </header>
 
-  <iframe
-    id="flyer-pdf"
-    class="pdf-viewer"
-    src="assets/11thAprilFull.pdf"
-    title="11 April flyer PDF"
-  ></iframe>
+  <main>
+    <img
+      id="flyer-image"
+      class="flyer-view"
+      src="images/11thAprilMAP.png"
+      alt="11 April map"
+    >
+  </main>
 
   <script>
     const flyers = {
       full: {
         lang: "en",
-        path: "assets/11thAprilFull.pdf",
-        title: "11 April flyer PDF"
+        path: "images/11thAprilMAP.png",
+        alt: "11 April map"
       },
       en: {
         lang: "en",
-        path: "assets/11thAprilENG.pdf",
-        title: "11 April English flyer PDF"
+        path: "images/ListENG.png",
+        alt: "11 April English program list"
       },
       kk: {
         lang: "kk",
-        path: "assets/11thAprilKAZ.pdf",
-        title: "11 April Kazakh flyer PDF"
+        path: "images/ListKAZ.png",
+        alt: "11 April Kazakh program list"
       }
     };
 
     const select = document.getElementById("flyer-language");
-    const viewer = document.getElementById("flyer-pdf");
+    const image = document.getElementById("flyer-image");
 
     select.addEventListener("change", (event) => {
       const flyer = flyers[event.target.value] || flyers.full;
-      viewer.src = flyer.path;
-      viewer.title = flyer.title;
+      image.src = flyer.path;
+      image.alt = flyer.alt;
       document.documentElement.lang = flyer.lang;
     });
   </script>
