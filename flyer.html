@@ -1,12 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Флайер на 11 Апреля</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program List</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: #13325b;
+      background: #f3f7fb;
+    }
+
+    .flyer-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid #d6e2f0;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .flyer-toolbar h1 {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .language-picker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #527199;
+    }
+
+    .language-picker select {
+      min-width: 170px;
+      padding: 10px 12px;
+      border: 1px solid #d6e2f0;
+      border-radius: 8px;
+      background: #fff;
+      color: #13325b;
+      font: inherit;
+    }
+
+    .pdf-viewer {
+      display: block;
+      width: 100%;
+      height: calc(100vh - 72px);
+      min-height: 720px;
+      border: 0;
+      background: #fff;
+    }
+
+    @media (max-width: 640px) {
+      .flyer-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .language-picker {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .language-picker select {
+        width: 100%;
+      }
+
+      .pdf-viewer {
+        height: calc(100vh - 136px);
+      }
+    }
+  </style>
 </head>
 <body>
+  <header class="flyer-toolbar">
+    <h1>Program List</h1>
+    <label class="language-picker" for="flyer-language">
+      <span>Language</span>
+      <select id="flyer-language" aria-label="Select flyer language">
+        <option value="full" selected>Map</option>
+        <option value="en">English</option>
+        <option value="kk">Kazakh</option>
+      </select>
+    </label>
+  </header>
 
+  <iframe
+    id="flyer-pdf"
+    class="pdf-viewer"
+    src="assets/11thAprilFull.pdf"
+    title="11 April flyer PDF"
+  ></iframe>
 
-<iframe src="assets/11thApril.pdf" width="100%" height="1200px"></iframe>
+  <script>
+    const flyers = {
+      full: {
+        lang: "en",
+        path: "assets/11thAprilFull.pdf",
+        title: "11 April flyer PDF"
+      },
+      en: {
+        lang: "en",
+        path: "assets/11thAprilENG.pdf",
+        title: "11 April English flyer PDF"
+      },
+      kk: {
+        lang: "kk",
+        path: "assets/11thAprilKAZ.pdf",
+        title: "11 April Kazakh flyer PDF"
+      }
+    };
 
+    const select = document.getElementById("flyer-language");
+    const viewer = document.getElementById("flyer-pdf");
+
+    select.addEventListener("change", (event) => {
+      const flyer = flyers[event.target.value] || flyers.full;
+      viewer.src = flyer.path;
+      viewer.title = flyer.title;
+      document.documentElement.lang = flyer.lang;
+    });
+  </script>
 </body>
 </html>
