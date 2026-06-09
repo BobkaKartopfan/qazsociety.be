@@ -13,8 +13,6 @@ npm-debug.log
 
 .vscode/
 
-# Private testing deployment files.
-# These must not be published by GitHub Pages or contain an allowlisted IP.
 .htaccess
 testing.html
 testing.css
